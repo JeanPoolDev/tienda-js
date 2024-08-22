@@ -1,0 +1,32 @@
+
+
+.card {
+  height: 100vh;
+  width: 250px;
+  border-radius: 15px;
+  background-color: #5D5E60;
+  position: fixed;
+  right: 12px;
+  top: 12px;
+  z-index: 20;
+  display: none;
+}
+
+.button-card {
+  padding: 10px;
+  background-color: rgb(236, 105, 236);
+  border-radius: 50%;
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  z-index: 30;
+  transition: all ease 0.3s;
+}
+
+.button-card:hover {
+  scale: 1.1;
+}
+
+.button-card ~ input:checked ~ .card {
+  display: block;
+}

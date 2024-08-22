@@ -3,6 +3,11 @@ import { useState } from 'react'
 import { CardProducts } from './components/CardProducts'
 import { useFilters } from './hooks/useFilters'
 import { Filters } from './components/Filters'
+import { Header } from './components/Header'
+import { Card } from './components/Card'
+import { CardProvider } from './context/card'
+import { Footer } from './components/Footer'
+
 function App() {
   
   const [products] = useState(initialProducts)
@@ -12,24 +17,21 @@ function App() {
   const newProducts = filterProducts(products)
 
   return (
-    <>
 
-      <header className="text-6xl text-center py-10">
-        <h1>Tienda JP 🏪</h1>
-      </header>
+    <CardProvider>
 
-      <nav>
+        <Header />      
+
+        <Card />
+
         <Filters />
-      </nav>
+        
+        <CardProducts products={newProducts}/>
 
-      <main>
-        <section>
-          <CardProducts products={newProducts}/>
-        </section>
-      </main>
+        <Footer />
 
 
-    </>
+    </CardProvider>
   )
 }
 

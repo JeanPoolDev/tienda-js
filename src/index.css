@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background: #111;
+  max-width: 72rem;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+}
